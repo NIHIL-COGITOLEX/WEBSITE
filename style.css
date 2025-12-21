@@ -1,0 +1,543 @@
+/* =========================================================
+   ALFA TZA LLP — FINAL PRODUCTION CSS
+   Home Page Only
+   Black · Red · White · Responsive · Animated
+========================================================= */
+
+/* ================= ROOT ================= */
+:root {
+  --bg: #000;
+  --surface-1: #0b0b0b;
+  --surface-2: #141414;
+  --surface-3: #1a1a1a;
+
+  --white: #ffffff;
+  --muted: rgba(255,255,255,.7);
+
+  --red: #ff1f45;
+  --red-dark: #c8002e;
+
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+
+  --container: 1200px;
+  --ease: cubic-bezier(.25,.9,.25,1);
+}
+
+/* ================= RESET ================= */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--white);
+  font-family: "Inter", system-ui, sans-serif;
+  line-height: 1.55;
+}
+
+img { max-width: 100%; display: block; }
+
+.container {
+  width: min(92%, var(--container));
+  margin-inline: auto;
+}
+
+/* ================= BUTTONS ================= */
+.btn {
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 12px 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .2s var(--ease), box-shadow .2s var(--ease);
+}
+
+.btn.accent {
+  background: linear-gradient(90deg, var(--red), var(--red-dark));
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(255,31,69,.25);
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 2px solid rgba(255,255,255,.25);
+  color: #EB3510;
+}
+
+.btn.outline {
+  background: transparent;
+  border: 2px solid var(--red);
+  color: var(--red);
+}
+
+@media (hover:hover) {
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 40px rgba(255,31,69,.35);
+  }
+}
+
+/* ================= HEADER ================= */
+.top-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(0,0,0,.95);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+}
+
+.brand-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo { width: 46px; height: 46px; }
+.brand-name { font-weight: 900; }
+.brand-tag { font-size: 12px; color: var(--muted); }
+
+/* ================= HAMBURGER ================= */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 2px;
+  background: #fff;
+  transition: transform .3s var(--ease), opacity .3s var(--ease);
+}
+
+/* animate to X */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile drawer */
+.nav-right {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top, #111, #000);
+  padding: 100px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transform: translateY(-100%);
+  transition: transform .35s var(--ease);
+}
+
+.nav-right.active {
+  transform: translateY(0);
+}
+
+.nav-right .btn {
+  width: 100%;
+  font-size: 16px;
+}
+
+/* ================= HERO ================= */
+.hero {
+  padding: 56px 0 36px;
+}
+
+.hero-inner {
+  display: grid;
+  gap: 36px;
+}
+
+.slogan-wrap {
+  background: var(--surface-1);
+  padding: 26px;
+  border-radius: var(--radius-lg);
+  animation: fadeUp .8s var(--ease) both;
+}
+
+.slogan-svg {
+  width: 100%;
+  max-height: clamp(320px, 80vw, 520px);
+}
+
+
+.hero-lead {
+  margin-top: 14px;
+  font-size: 16px; /* ⬅ bigger on mobile */
+  font-weight: 500;
+  color: var(--muted);
+}
+
+@media (min-width: 768px) {
+  .slogan-svg {
+    max-height: 260px;
+  }
+
+  .hero-lead {
+    font-size: 17px;
+  }
+}
+
+.hero-actions {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+/* cards */
+.hero-right {
+  display: grid;
+  gap: 24px;
+}
+
+.floating-cluster {
+  display: grid;
+  gap: 14px;
+}
+
+.float-card {
+  background: var(--surface-2);
+  padding: 18px;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255,255,255,.08);
+  animation: fadeUp .8s var(--ease) both;
+}
+
+.fc-amount {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--red);
+}
+
+.fc-tenure {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+/* stats */
+.right-stats {
+  display: grid;
+  gap: 10px;
+}
+
+.rs {
+  background: var(--surface-1);
+  padding: 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+/* ================= METRICS — PREMIUM ================= */
+
+.metrics-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.metric {
+  position: relative;
+  padding: 26px 24px;
+  text-align: center;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,.06),
+      rgba(255,255,255,.015)
+    );
+
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.08);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.25),
+    inset 0 1px 0 rgba(255,255,255,.06);
+
+  transition:
+    transform .35s cubic-bezier(.2,.8,.2,1),
+    box-shadow .35s cubic-bezier(.2,.8,.2,1),
+    border-color .35s cubic-bezier(.2,.8,.2,1);
+}
+
+/* hover lift */
+.metric:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255,0,0,.35);
+  box-shadow:
+    0 20px 45px rgba(0,0,0,.45),
+    inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+/* number */
+.mnum {
+  font-size: 34px;
+  font-weight: 900;
+  color: var(--red);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+/* label text */
+.metric p {
+  font-size: 14px;
+  color: var(--muted);
+  letter-spacing: .3px;
+}
+
+/* ================= BANK STRIP ================= */
+.banks-wrap {
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+.banks-track {
+  display: flex;
+  gap: 22px;
+  width: max-content;
+  animation: bankScroll 40s linear infinite;
+}
+
+.banks-track:hover {
+  animation-play-state: paused;
+}
+
+.bank {
+  background: var(--surface-2);
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+@keyframes bankScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ================= WHY ================= */
+.section-title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--red);
+  margin-bottom: 24px;
+}
+
+.why-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.why-card {
+  background: var(--surface-1);
+  padding: 22px;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  animation: fadeUp .8s var(--ease) both;
+}
+
+/* ================= SERVICE ================= */
+.service-card {
+  background: var(--surface-1);
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  display: grid;
+  gap: 20px;
+}
+
+/* ================= FAQ (IMPROVED) ================= */
+.faq-wrap {
+  display: grid;
+  gap: 16px;
+}
+
+.faq-item {
+  background: linear-gradient(180deg, var(--surface-1), #0e0e0e);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255,255,255,.08);
+  overflow: hidden;
+  transition: border-color .25s var(--ease), transform .25s var(--ease);
+}
+
+@media (hover:hover) {
+  .faq-item:hover {
+    border-color: rgba(255,31,69,.35);
+    transform: translateY(-2px);
+  }
+}
+
+.faq-q {
+  padding: 20px;
+  width: 100%;
+  background: none;
+  border: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 800;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.faq-q i {
+  transition: transform .3s var(--ease);
+  color: var(--red);
+}
+
+.faq-a {
+  padding: 0 20px 18px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* ready for JS toggle */
+.faq-item.open .faq-q i {
+  transform: rotate(45deg);
+}
+
+
+/* ================= FOOTER (REFINED + SIDE BY SIDE) ================= */
+.site-footer {
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.9), rgba(0,0,0,1)),
+    url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  background-attachment: fixed;
+  padding: 44px 0 22px;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+
+.footer-top {
+  display: grid;
+  gap: 28px;
+}
+
+/* LEFT */
+.footer-address {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* RIGHT — FIX HERE */
+.footer-right {
+  display: grid;
+  gap: 24px;
+}
+
+/* individual column */
+.footer-right .panel h4 {
+  font-size: 15px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-logo {
+  width: 40px;
+  height: auto;
+  display: block;
+}
+
+.links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.links li {
+  font-size: 14px;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 4px 0;
+  transition: color .2s var(--ease), transform .2s var(--ease);
+}
+
+.links li:hover {
+  color: var(--red);
+  transform: translateX(4px);
+}
+
+/* bottom */
+.footer-bottom {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ================= FOOTER RESPONSIVE ================= */
+@media (min-width: 768px) {
+  .footer-top {
+    grid-template-columns: 1fr 1.4fr;
+    align-items: start;
+  }
+
+  .footer-right {
+    grid-template-columns: repeat(3, 1fr); /* ⬅ SIDE BY SIDE */
+    gap: 32px;
+  }
+}
+
+
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ================= BREAKPOINTS ================= */
+@media (min-width: 768px) {
+  .hamburger { display: none; }
+
+  .nav-right {
+    position: static;
+    transform: none;
+    flex-direction: row;
+    padding: 0;
+    background: none;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1.1fr .9fr;
+    align-items: center;
+  }
+
+  .metrics-grid { grid-template-columns: repeat(4,1fr); }
+  .why-grid { grid-template-columns: repeat(3,1fr); }
+  .service-card { grid-template-columns: 1.2fr .8fr; }
+  .footer-top { grid-template-columns: 1fr 1.4fr; }
+}
+
+@media (min-width: 1024px) {
+  .why-grid { grid-template-columns: repeat(5,1fr); }
+}
