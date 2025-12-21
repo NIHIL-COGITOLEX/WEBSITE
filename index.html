@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Alfa Tza LLP — Personal Loans Made Simple</title>
+  <meta name="description" content="Alfa Tza LLP — Personal loans for customers and DSA partners. Fast approvals, trusted lenders, robust DSA support." />
+
+  <!-- Fonts & icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+
+</head>
+<body>
+  <header class="top-header" role="banner">
+    <div class="container header-inner">
+      <div class="brand-left" role="presentation">
+    <a href="index.html">
+      <img
+        id="brandLogo"
+        class="brand-logo"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/1200px-Vitejs-logo.svg.png"
+        alt="Alfa Tza LLP logo"
+      >
+    </a>
+    
+        <div class="brand-text">
+          <div class="brand-name">Alfa Tza LLP</div>
+          <div class="brand-tag">Personal Loans • DSA Partners • Careers</div>
+        </div>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-right" id="navMenu" aria-label="Primary navigation">
+        <button class="btn ghost" id="contactBtn">Contact</button>
+        <button class="btn accent" id="applyLoanBtn">Apply Loan</button>
+        <button class="btn outline" id="applyJobBtn">Apply Job</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO: H-C (oversize slogan left, floating curved cards) -->
+    <section class="hero" id="hero" aria-label="Hero: Personal Loans">
+      <div class="hero-bg-layer"></div>
+      <div class="container hero-inner">
+        <div class="hero-left">
+          <div class="slogan-wrap" aria-hidden="false">
+            <!-- Self-drawing SVG 3-line slogan -->
+            <svg class="slogan-svg"
+                viewBox="0 0 1100 420"
+                preserveAspectRatio="xMinYMid meet"
+                role="img">
+
+              <defs>
+                <linearGradient id="gA" x1="0" x2="1">
+                  <stop offset="0" stop-color="#ff4b6b"/>
+                  <stop offset="1" stop-color="#e0002f"/>
+                </linearGradient>
+              </defs>
+
+              <text class="stroke-line" x="24" y="140" font-size="110" font-weight="800">
+                Personal Loans
+              </text>
+              <text class="stroke-line" x="24" y="260" font-size="110" font-weight="800">
+                Made Simple
+              </text>
+              <text class="stroke-line small" x="24" y="340" font-size="34" font-weight="700">
+                For Customers &amp; Partner DSAs
+              </text>
+
+              <text class="fill-line" x="24" y="140" font-size="110" font-weight="800" fill="url(#gA)">
+                Personal Loans
+              </text>
+              <text class="fill-line" x="24" y="260" font-size="110" font-weight="800" fill="url(#gA)">
+                Made Simple
+              </text>
+              <text class="fill-line small" x="24" y="340" font-size="34" font-weight="700" fill="#ffffff">
+                For Customers &amp; Partner DSAs
+              </text>
+
+            </svg>
+
+
+            <p class="hero-lead">Fast approvals • Competitive rates • DSA-friendly platform</p>
+
+            <div class="hero-actions">
+              <button class="btn accent big" id="heroApply">Apply Now</button>
+              <button class="btn ghost" id="heroLearn">How it works</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-right" aria-hidden="false">
+          <!-- floating card cluster -->
+          <div class="floating-cluster" aria-hidden="true">
+            <div class="float-card float-1" data-tilt>
+              <div class="fc-amount">₹50,000</div>
+              <div class="fc-tenure">12 months</div>
+              <button class="btn small selectLoan">Apply</button>
+            </div>
+
+            <div class="float-card float-2 featured" data-tilt>
+              <div class="fc-amount">₹2,50,000</div>
+              <div class="fc-tenure">24 months</div>
+              <button class="btn small selectLoan">Apply</button>
+            </div>
+
+            <div class="float-card float-3" data-tilt>
+              <div class="fc-amount">₹7,50,000</div>
+              <div class="fc-tenure">36 months</div>
+              <button class="btn small selectLoan">Apply</button>
+            </div>
+          </div>
+
+          <!-- right-side compact stats -->
+          <div class="right-stats">
+            <div class="rs stat" data-target="250"><div class="num">0</div><div class="lbl">Crores Of Loan Disbursed</div></div>
+            <div class="rs stat" data-target="15"><div class="num">0</div><div class="lbl">Minutes Average Approval Time</div></div>
+            <div class="rs stat" data-target="24"><div class="num">0</div><div class="lbl">Hours Average Disbursed Time</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- METRICS -->
+    <section class="metrics section" aria-label="Company metrics">
+      <div class="container metrics-grid">
+        <div class="metric" data-target="500"><div class="mnum">0</div><div class="mtitle">Customer Satisfaction</div><div class="msub">500+ satisfied customers</div></div>
+        <div class="metric" data-target="25"><div class="mnum">0</div><div class="mtitle">Lenders</div><div class="msub">25+ partners</div></div>
+        <div class="metric" data-target="2"><div class="mnum">0</div><div class="mtitle">Branches</div><div class="msub">Vashi &amp; Thane</div></div>
+        <div class="metric" data-target="65"><div class="mnum">0</div><div class="mtitle">Employees</div><div class="msub">Dedicated team</div></div>
+      </div>
+    </section>
+
+    <!-- BANK STRIP -->
+    <section class="banks section" aria-label="Partner banks">
+      <div class="container banks-wrap">
+        <div class="banks-track" id="banksTrack" aria-hidden="true" tabindex="0">
+          <!-- visible names (duplicate for seamless loop) -->
+          <div class="bank">IDFC</div><div class="bank">YES</div><div class="bank">INDUSIND</div><div class="bank">AXIS</div><div class="bank">HDFC</div><div class="bank">KOTAK</div><div class="bank">ICICI</div><div class="bank">AXIS FINANCE</div><div class="bank">INCRED</div><div class="bank">SHRIRAM</div><div class="bank">CHOLA</div><div class="bank">FINNABLE</div><div class="bank">MUTHOOT</div><div class="bank">ABFL</div><div class="bank">BAJAJ</div><div class="bank">TATA</div><div class="bank">L&amp;T</div>
+          <div class="bank">IDFC</div><div class="bank">YES</div><div class="bank">INDUSIND</div><div class="bank">AXIS</div><div class="bank">HDFC</div><div class="bank">KOTAK</div><div class="bank">ICICI</div><div class="bank">AXIS FINANCE</div><div class="bank">INCRED</div><div class="bank">SHRIRAM</div><div class="bank">CHOLA</div><div class="bank">FINNABLE</div><div class="bank">MUTHOOT</div><div class="bank">ABFL</div><div class="bank">BAJAJ</div><div class="bank">TATA</div><div class="bank">L&amp;T</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY ALFA -->
+    <section class="why section" id="why">
+      <div class="container">
+        <h2 class="section-title">Why Alfa</h2>
+        <div class="why-grid">
+          <div class="why-card"><i class="fa-solid fa-bolt"></i><h3>Fast Approvals</h3><p>Decisions in hours for most profiles.</p></div>
+          <div class="why-card"><i class="fa-solid fa-shield-halved"></i><h3>Secure Partners</h3><p>Regulated lending partners & encrypted data.</p></div>
+          <div class="why-card"><i class="fa-solid fa-hand-holding-dollar"></i><h3>DSA Support</h3><p>Dashboard, training & timely payouts.</p></div>
+          <div class="why-card"><i class="fa-solid fa-eye"></i><h3>Transparent Fees</h3><p>Clear commissions, no surprises.</p></div>
+          <div class="why-card"><i class="fa-solid fa-headset"></i><h3>Customer Care</h3><p>Priority assistance & grievance support.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICE -->
+    <section class="service section" id="service">
+      <div class="container service-card">
+        <div class="service-left">
+          <h3>Personal Loan — Tailored to you</h3>
+          <p>Flexible tenures and fast disbursal with minimal paperwork. DSAs get transparent commissions and a partner dashboard.</p>
+          <div class="service-actions">
+            <button class="btn accent" id="serviceApply">Apply Loan</button>
+            <hr/>
+            <button class="btn ghost" id="partnerBtn">Become a Partner</button>
+          </div>
+        </div>
+
+        <aside class="service-right">
+          <ul class="features">
+            <li><i class="fa-solid fa-stopwatch"></i> Fast disbursal</li>
+            <li><i class="fa-solid fa-file-lines"></i> Minimal paperwork</li>
+            <li><i class="fa-solid fa-percent"></i> Competitive rates</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq section" id="faq" aria-labelledby="faqHeading">
+      <div class="container">
+        <h2 id="faqHeading" class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-wrap" id="faqWrap">
+          <article class="faq-item">
+            <button class="faq-q" aria-expanded="false"><span>How fast is approval?</span><i class="fa-solid fa-plus" aria-hidden="true"></i></button>
+            <div class="faq-a">Most complete applications are approved within 3–6 hours. Manual review cases may take longer.</div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-q" aria-expanded="false"><span>What documents are required?</span><i class="fa-solid fa-plus" aria-hidden="true"></i></button>
+            <div class="faq-a">PAN, Aadhaar, last 3 months bank statements, salary slips/ITR and address proof.</div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-q" aria-expanded="false"><span>How do DSAs earn?</span><i class="fa-solid fa-plus" aria-hidden="true"></i></button>
+            <div class="faq-a">DSAs earn per disbursal commission; higher volume receives tiered incentives.</div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-q" aria-expanded="false"><span>Is my data secure?</span><i class="fa-solid fa-plus" aria-hidden="true"></i></button>
+            <div class="faq-a">Yes — we use encrypted transfers and work only with compliant partners.</div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-q" aria-expanded="false"><span>Where are you located?</span><i class="fa-solid fa-plus" aria-hidden="true"></i></button>
+            <div class="faq-a">Offices in Vashi &amp; Thane; partner outlets across India.</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="container footer-top">
+        <div class="footer-left">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/1200px-Vitejs-logo.svg.png" alt="Alfa logo" class="footer-logo">
+          <address class="footer-address">
+            Office 304, Reliable Pride, Sector 19, Vashi, Navi Mumbai 400703<br>
+            <a href="tel:+919000000000" class="contact-link">+91 90000 00000</a> • <a href="mailto:info@alfa.finance" class="contact-link">info@alfa.finance</a>
+          </address>
+          <div class="socials">
+            <a class="social" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a class="social" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a class="social" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a class="social" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-right">
+          <div class="panel">
+            <h4>Company</h4>
+            <ul class="links"><li>Home</li><li>About</li><li>Careers</li><li>Events</li><li>Contact</li></ul>
+          </div>
+
+          <div class="panel">
+            <h4>Feedback</h4>
+            <ul class="links"><li>Customer Feedback</li><li>Employee Feedback</li><li>Grievance</li></ul>
+          </div>
+
+          <div class="panel">
+            <h4>Apply</h4>
+            <ul class="links"><li class="apply-loan">Apply Loan</li><li class="apply-job">Apply Job</li></ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <small>© <span id="year"></span> Alfa Tza LLP — All rights reserved</small>
+      </div>
+    </footer>
+  </main>
+
+
+  <!-- End body -->
+</body>
+</html>
+
+
