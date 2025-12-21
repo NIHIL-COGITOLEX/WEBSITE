@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Contact — Alfa Tza LLP</title>
+  <meta name="description" content="Contact Alfa Tza LLP. Office address, phone, email, and location map." />
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Global CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Contact Page CSS -->
+  <link rel="stylesheet" href="contact.css">
+
+  <!-- Global JS -->
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="top-header" role="banner">
+  <div class="container header-inner">
+
+    <div class="brand-left">
+      <a href="index.html">
+        <img
+          class="brand-logo"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/1200px-Vitejs-logo.svg.png"
+          alt="Alfa Tza LLP logo"
+        >
+      </a>
+
+      <div class="brand-text">
+        <div class="brand-name">Alfa Tza LLP</div>
+        <div class="brand-tag">Personal Loans • DSA Partners • Careers</div>
+      </div>
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav-right" id="navMenu">
+      <button class="btn ghost" id="contactBtn">Contact</button>
+      <button class="btn accent" id="applyLoanBtn">Apply Loan</button>
+      <button class="btn outline" id="applyJobBtn">Apply Job</button>
+    </nav>
+
+  </div>
+</header>
+
+<!-- ================= MAIN ================= -->
+<main class="contact-page">
+  <div class="container contact-grid">
+
+    <!-- INFO CARD -->
+    <div class="contact-card">
+      <h2>ALFA TZA LLP</h2>
+
+      <p class="company-desc">
+        Alfa Tza LLP provides structured financial solutions with strict
+        operational discipline and trusted lending partnerships.
+      </p>
+
+      <div class="contact-line">
+        <span>Phone:</span> +91 98765 43210
+      </div>
+
+      <div class="contact-line">
+        <span>Email:</span> contact@alfatza.com
+      </div>
+
+      <div class="contact-line">
+        <span>Address:</span> Navi Mumbai, Maharashtra, India
+      </div>
+
+      <div class="contact-cta">
+        <p>Need directions instantly?</p>
+        <button class="btn accent" onclick="openMap()">Open Google Maps</button>
+      </div>
+    </div>
+
+    <!-- HOW IT WORKS CARD -->
+    <div class="contact-card">
+      <h2>How It Works</h2>
+
+      <p class="company-desc">
+        Alfa Tza LLP ensures a smooth financial experience in 3 simple steps:
+      </p>
+
+      <ul class="how-it-works">
+        <li><strong>Step 1:</strong> Choose your branch and consult our advisors.</li>
+        <li><strong>Step 2:</strong> Apply for a loan or service through our secure portal.</li>
+        <li><strong>Step 3:</strong> Receive approvals quickly and get personalized assistance.</li>
+      </ul>
+
+      <div class="contact-cta">
+        <p>Need more details?</p>
+        <a class="btn accent" href="tel:+919321021942">
+          Contact Us
+        </a>        
+      </div>
+    </div>
+
+
+    <!-- BRANCH SELECTOR -->
+    <div class="contact-card">
+      <h2>Our Branches</h2>
+
+      <div class="branch-list">
+        <div class="branch-card active" data-branch="vashi" onclick="switchBranch('vashi')">
+          <strong>Vashi</strong>
+          <span>Navi Mumbai</span>
+        </div>
+
+        <div class="branch-card" data-branch="thane" onclick="switchBranch('thane')">
+          <strong>Thane</strong>
+          <span>Thane West</span>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- MAP CARD -->
+    <div class="contact-card">
+      <h2>Our Location</h2>
+
+      <div class="map-wrap" onclick="openMap()">
+        <iframe
+          id="branchMap"
+          src="https://www.google.com/maps?q=Alfa+TZA+LLP+Vashi+Plaza+Sector+17+Navi+Mumbai&output=embed"
+          loading="lazy">
+        </iframe>
+
+
+
+        <div class="map-overlay">
+          View on Google Maps
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="container footer-top">
+
+    <div class="footer-left">
+      <img src="/mnt/data/WhatsApp_Image_2025-09-23_at_3.19.33_PM-removebg-preview.png"
+           alt="Alfa logo"
+           class="footer-logo">
+
+      <address class="footer-address">
+        Office 304, Reliable Pride, Sector 19, Vashi, Navi Mumbai 400703<br>
+        <a href="tel:+919000000000">+91 90000 00000</a> •
+        <a href="mailto:info@alfa.finance">info@alfa.finance</a>
+      </address>
+
+      <div class="socials">
+        <a class="social"><i class="fab fa-twitter"></i></a>
+        <a class="social"><i class="fab fa-instagram"></i></a>
+        <a class="social"><i class="fab fa-youtube"></i></a>
+        <a class="social"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-right">
+      <div class="panel">
+        <h4>Company</h4>
+        <ul class="links">
+          <li>Home</li>
+          <li>About</li>
+          <li>Careers</li>
+          <li>Events</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <h4>Feedback</h4>
+        <ul class="links">
+          <li>Customer Feedback</li>
+          <li>Employee Feedback</li>
+          <li>Grievance</li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <h4>Apply</h4>
+        <ul class="links">
+          <li class="apply-loan">Apply Loan</li>
+          <li class="apply-job">Apply Job</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container footer-bottom">
+    <small>© <span id="year"></span> Alfa Tza LLP — All rights reserved</small>
+  </div>
+</footer>
+
+</body>
+</html>
