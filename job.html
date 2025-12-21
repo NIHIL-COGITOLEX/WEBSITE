@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Apply Job — Alfa Tza LLP</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Alfa Tza LLP — Personal Loans Made Simple</title>
+    <meta name="description" content="Alfa Tza LLP — Personal loans for customers and DSA partners. Fast approvals, trusted lenders, robust DSA support." />
+  
+    <!-- Fonts & icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="form-pages.css"> 
+    <script src="script.js" defer></script>
+  
+  </head>
+  <body>
+    <header class="top-header" role="banner">
+      <div class="container header-inner">
+        <div class="brand-left" role="presentation">
+      <a href="index.html">
+        <img
+          id="brandLogo"
+          class="brand-logo"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/1200px-Vitejs-logo.svg.png"
+          alt="Alfa Tza LLP logo"
+        >
+      </a>
+      
+          <div class="brand-text">
+            <div class="brand-name">Alfa Tza LLP</div>
+            <div class="brand-tag">Personal Loans • DSA Partners • Careers</div>
+          </div>
+        </div>
+  
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-right" id="navMenu" aria-label="Primary navigation">
+          <button class="btn ghost" id="contactBtn">Contact</button>
+          <button class="btn accent" id="applyLoanBtn">Apply Loan</button>
+          <button class="btn outline" id="applyJobBtn">Apply Job</button>
+        </nav>
+      </div>
+    </header>
+
+
+<main class="container" style="padding:60px 0;">
+  <h2 style="margin-bottom:20px;">Job Application Form</h2>
+
+  <div class="form-wrapper-container">
+
+    <!-- Left: Company Info -->
+    <div class="info-card">
+      <h3>Company Info</h3>
+      <p><strong>Address:</strong> 123 Alfa Street, Cityville</p>
+      <p><strong>Phone:</strong> +1 234 567 890</p>
+      <p><strong>Email:</strong> contact@alfatza.com</p>
+    </div>
+
+    <!-- Right: Job Form -->
+    <div class="form-card">
+      <form class="apply-form">
+        <label>Full Name<input type="text" required></label>
+        <label>Phone<input type="tel" required pattern="[0-9]{10}"></label>
+        <label>Email<input type="email" required></label>
+        <label>Position Applying For
+          <select required>
+            <option>Sales Executive</option>
+            <option>Telecaller</option>
+            <option>Team Leader</option>
+            <option>Marketing</option>
+          </select>
+        </label>
+        <button type="submit" class="btn-submit">Submit</button>
+      </form>
+    </div>
+
+  </div>
+
+</main>
+    <!-- FOOTER -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="container footer-top">
+        <div class="footer-left">
+          <img src="/mnt/data/WhatsApp_Image_2025-09-23_at_3.19.33_PM-removebg-preview.png" alt="Alfa logo" class="footer-logo">
+          <address class="footer-address">
+            Office 304, Reliable Pride, Sector 19, Vashi, Navi Mumbai 400703<br>
+            <a href="tel:+919000000000" class="contact-link">+91 90000 00000</a> • <a href="mailto:info@alfa.finance" class="contact-link">info@alfa.finance</a>
+          </address>
+          <div class="socials">
+            <a class="social" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a class="social" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a class="social" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a class="social" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-right">
+          <div class="panel">
+            <h4>Company</h4>
+            <ul class="links"><li>Home</li><li>About</li><li>Careers</li><li>Events</li><li>Contact</li></ul>
+          </div>
+
+          <div class="panel">
+            <h4>Feedback</h4>
+            <ul class="links"><li>Customer Feedback</li><li>Employee Feedback</li><li>Grievance</li></ul>
+          </div>
+
+          <div class="panel">
+            <h4>Apply</h4>
+            <ul class="links"><li class="apply-loan">Apply Loan</li><li class="apply-job">Apply Job</li></ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <small>© <span id="year"></span> Alfa Tza LLP — All rights reserved</small>
+      </div>
+    </footer>
+
+</body>
+</html>
