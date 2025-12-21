@@ -1,0 +1,183 @@
+/* =========================================================
+   CONTACT PAGE — ALFA TZA LLP
+   Uses existing variables & design system
+========================================================= */
+
+/* ================= PAGE WRAP ================= */
+.contact-page {
+  padding: 56px 0;
+}
+
+/* ================= GRID ================= */
+.contact-grid {
+  display: grid;
+  gap: 28px;
+}
+
+/* ================= CARD BASE ================= */
+.contact-card {
+  background: linear-gradient(
+    180deg,
+    var(--surface-1),
+    var(--surface-2)
+  );
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.35),
+    inset 0 1px 0 rgba(255,255,255,.04);
+  animation: fadeUp .7s var(--ease) both;
+}
+
+/* ================= INFO CARD ================= */
+.contact-card h2 {
+  margin: 0 0 14px;
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--red);
+}
+
+.company-desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+.contact-line {
+  font-size: 14px;
+  margin-bottom: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.contact-line span {
+  color: var(--muted);
+  min-width: 80px;
+}
+
+/* ================= MAP ================= */
+.map-wrap {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.map-wrap iframe {
+  width: 100%;
+  height: 320px;
+  border: 0;
+  pointer-events: none;
+  filter: grayscale(100%) contrast(1.1) brightness(.9);
+}
+
+.map-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,.15),
+      rgba(0,0,0,.75)
+    );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  color: #fff;
+  cursor: pointer;
+  transition: background .25s var(--ease);
+}
+
+.map-overlay:hover {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,.25),
+      rgba(0,0,0,.9)
+    );
+}
+
+/* ================= CTA STRIP ================= */
+.contact-cta {
+  margin-top: 24px;
+  padding: 22px;
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,31,69,.15),
+      rgba(255,31,69,.05)
+    );
+  border: 1px solid rgba(255,31,69,.25);
+  text-align: center;
+}
+
+.contact-cta p {
+  margin-bottom: 14px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (min-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+/* ================= BRANCH SELECTOR ================= */
+
+.branch-list {
+  display: grid;
+  gap: 12px;
+}
+
+.branch-card {
+  background: var(--surface-2);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  border: 1px solid rgba(255,255,255,.08);
+  cursor: pointer;
+  transition:
+    border-color .25s var(--ease),
+    transform .25s var(--ease);
+}
+
+.branch-card strong {
+  display: block;
+  font-size: 15px;
+}
+
+.branch-card span {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.branch-card:hover,
+.branch-card.active {
+  border-color: var(--red);
+  transform: translateY(-2px);
+}
+
+/* ================= HOW IT WORKS ================= */
+.how-it-works {
+  margin: 14px 0;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.how-it-works li {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.how-it-works li strong {
+  color: var(--red);
+}
