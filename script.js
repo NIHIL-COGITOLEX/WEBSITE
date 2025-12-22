@@ -67,25 +67,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
   
 
-  /* ---------------- FAQ ACCORDION ---------------- */
-  document.querySelectorAll(".faq-item").forEach(item => {
-    const btn = item.querySelector(".faq-q");
+   /* ---------------- FAQ ACCORDION (SMOOTH) ---------------- */
+   document.querySelectorAll(".faq-item").forEach(item => {
+     const btn = item.querySelector(".faq-q");
+     const answer = item.querySelector(".faq-a");
+   
+     // start collapsed
+     answer.style.height = "0px";
+     answer.style.overflow = "hidden";
+     answer.style.transition = "height .35s ease";
+   
+     btn.addEventListener("click", () => {
+       const isOpen = item.classList.contains("open");
+   
+       // close all
+       document.querySelectorAll(".faq-item.open").forEach(i => {
+         i.classList.remove("open");
+         const a = i.querySelector(".faq-a");
+         a.style.height = "0px";
+         i.querySelector(".faq-q")
+           ?.setAttribute("aria-expanded", "false");
+       });
+   
+       // open clicked
+       if (!isOpen) {
+         item.classList.add("open");
+         answer.style.height = answer.scrollHeight + "px";
+         btn.setAttribute("aria-expanded", "true");
+       }
+     });
+   });
 
-    btn?.addEventListener("click", () => {
-      const open = item.classList.contains("open");
-
-      document.querySelectorAll(".faq-item.open").forEach(i => {
-        i.classList.remove("open");
-        i.querySelector(".faq-q")
-          ?.setAttribute("aria-expanded", "false");
-      });
-
-      if (!open) {
-        item.classList.add("open");
-        btn.setAttribute("aria-expanded", "true");
-      }
-    });
-  });
 
   /* ---------------- COUNTER ANIMATION ---------------- */
   const counters = document.querySelectorAll("[data-target]");
