@@ -413,25 +413,14 @@ img { max-width: 100%; display: block; }
   color: var(--red);
 }
 
-/* ---------- Answer (HIDDEN BY DEFAULT) ---------- */
+/* ---------- Answer (JS controls height) ---------- */
 
 .faq-a {
-  max-height: 0;
-  overflow: hidden;
   padding: 0 20px;
   font-size: 14px;
   line-height: 1.6;
   color: var(--muted);
-  transition:
-    max-height .35s var(--ease),
-    padding .25s var(--ease);
-}
-
-/* ---------- OPEN STATE ---------- */
-
-.faq-item.open .faq-a {
-  max-height: 200px; /* enough for content */
-  padding: 0 20px 18px;
+  overflow: hidden; /* required */
 }
 
 .faq-item.open .faq-q i {
