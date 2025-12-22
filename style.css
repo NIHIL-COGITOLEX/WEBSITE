@@ -336,6 +336,15 @@ img { max-width: 100%; display: block; }
   to { transform: translateX(-50%); }
 }
 
+@media (hover: none) {
+  #banksTrack {
+    animation-play-state: running !important;
+    touch-action: pan-y;
+    user-select: none;
+  }
+}
+
+
 /* ================= WHY ================= */
 .section-title {
   text-align: center;
