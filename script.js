@@ -141,12 +141,14 @@ document.addEventListener("DOMContentLoaded", () => {
     revealObserver.observe(el);
   });
 
-  /* ---------------- BANK TICKER PAUSE ---------------- */
+  /* ---------------- BANK TICKER PAUSE (DESKTOP ONLY) ---------------- */
   const bankTrack = document.getElementById("banksTrack");
-  if (bankTrack) {
+
+  if (bankTrack && window.matchMedia("(hover: hover)").matches) {
     bankTrack.addEventListener("mouseenter", () => {
       bankTrack.style.animationPlayState = "paused";
     });
+
     bankTrack.addEventListener("mouseleave", () => {
       bankTrack.style.animationPlayState = "running";
     });
