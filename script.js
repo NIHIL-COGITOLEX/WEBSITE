@@ -153,18 +153,40 @@ document.addEventListener("DOMContentLoaded", () => {
     revealObserver.observe(el);
   });
 
-  /* ---------------- BANK TICKER PAUSE (DESKTOP ONLY) ---------------- */
-  const bankTrack = document.getElementById("banksTrack");
+   /* ---------------- BANK TICKER (DESKTOP PAUSE + MOBILE SAFE) ---------------- */
+   
+   const bankTrack = document.getElementById("banksTrack");
+   
+   if (!bankTrack) return;
+   
+   /* Desktop: pause on hover */
+   if (window.matchMedia("(hover: hover)").matches) {
+     bankTrack.addEventListener("mouseenter", () => {
+       bankTrack.style.animationPlayState = "paused";
+     });
+   
+     bankTrack.addEventListener("mouseleave", () => {
+       bankTrack.style.animationPlayState = "running";
+     });
+   }
+   
+   /* Mobile: NEVER pause */
+   bankTrack.addEventListener(
+     "touchstart",
+     () => {
+       bankTrack.style.animationPlayState = "running";
+     },
+     { passive: true }
+   );
+   
+   bankTrack.addEventListener(
+     "touchend",
+     () => {
+       bankTrack.style.animationPlayState = "running";
+     },
+     { passive: true }
+   );
 
-  if (bankTrack && window.matchMedia("(hover: hover)").matches) {
-    bankTrack.addEventListener("mouseenter", () => {
-      bankTrack.style.animationPlayState = "paused";
-    });
-
-    bankTrack.addEventListener("mouseleave", () => {
-      bankTrack.style.animationPlayState = "running";
-    });
-  }
 
   /* ---------------- FLOAT CARD TILT (DESKTOP ONLY) ---------------- */
   if (window.matchMedia("(hover: hover)").matches) {
