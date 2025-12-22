@@ -367,7 +367,8 @@ img { max-width: 100%; display: block; }
   gap: 20px;
 }
 
-/* ================= FAQ (IMPROVED) ================= */
+/* ================= FAQ ================= */
+
 .faq-wrap {
   display: grid;
   gap: 16px;
@@ -378,7 +379,9 @@ img { max-width: 100%; display: block; }
   border-radius: var(--radius-lg);
   border: 1px solid rgba(255,255,255,.08);
   overflow: hidden;
-  transition: border-color .25s var(--ease), transform .25s var(--ease);
+  transition:
+    border-color .25s var(--ease),
+    transform .25s var(--ease);
 }
 
 @media (hover:hover) {
@@ -387,6 +390,8 @@ img { max-width: 100%; display: block; }
     transform: translateY(-2px);
   }
 }
+
+/* ---------- Question ---------- */
 
 .faq-q {
   padding: 20px;
@@ -402,22 +407,37 @@ img { max-width: 100%; display: block; }
   cursor: pointer;
 }
 
+/* icon */
 .faq-q i {
   transition: transform .3s var(--ease);
   color: var(--red);
 }
 
+/* ---------- Answer (HIDDEN BY DEFAULT) ---------- */
+
 .faq-a {
-  padding: 0 20px 18px;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 20px;
   font-size: 14px;
   line-height: 1.6;
   color: var(--muted);
+  transition:
+    max-height .35s var(--ease),
+    padding .25s var(--ease);
 }
 
-/* ready for JS toggle */
+/* ---------- OPEN STATE ---------- */
+
+.faq-item.open .faq-a {
+  max-height: 200px; /* enough for content */
+  padding: 0 20px 18px;
+}
+
 .faq-item.open .faq-q i {
   transform: rotate(45deg);
 }
+
 
 
 /* ================= FOOTER (REFINED + SIDE BY SIDE) ================= */
