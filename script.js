@@ -39,13 +39,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Header / Hero / Service buttons
   [
-    ["contactBtn", route.contact],
+    ["contactBtn", route["contact & grievance"]],
     ["applyLoanBtn", route["apply loan"]],
     ["applyJobBtn", route["apply job"]],
     ["heroApply", route["apply loan"]],
     ["heroLearn", route.about],
     ["serviceApply", route["apply loan"]],
-    ["partnerBtn", route.careers]
+    ["partnerBtn", route["apply job"]]
   ].forEach(([id, url]) => {
     const el = document.getElementById(id);
     if (el) el.addEventListener("click", () => go(url));
