@@ -181,3 +181,108 @@
 .how-it-works li strong {
   color: var(--red);
 }
+
+/* ================= GRIEVANCE REDRESSAL ================= */
+
+.grievance-section {
+  margin-top: 64px;
+  padding: 64px 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,31,69,.05),
+      rgba(0,0,0,.6)
+    );
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+
+.grievance-section h2 {
+  font-size: 26px;
+  font-weight: 900;
+  margin-bottom: 12px;
+  color: var(--red);
+}
+
+.grievance-section p {
+  max-width: 640px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin-bottom: 32px;
+}
+
+/* ================= GRIEVANCE CARD ================= */
+
+.grievance-form {
+  max-width: 520px;
+  background: linear-gradient(
+    180deg,
+    var(--surface-1),
+    var(--surface-2)
+  );
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow:
+    0 12px 32px rgba(0,0,0,.4),
+    inset 0 1px 0 rgba(255,255,255,.04);
+}
+
+/* ================= INPUTS ================= */
+
+.grievance-form input,
+.grievance-form textarea {
+  width: 100%;
+  background: rgba(0,0,0,.35);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  font-family: inherit;
+  font-size: 14px;
+  color: #fff;
+  margin-bottom: 14px;
+  transition:
+    border-color .25s var(--ease),
+    box-shadow .25s var(--ease);
+}
+
+.grievance-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.grievance-form input::placeholder,
+.grievance-form textarea::placeholder {
+  color: rgba(255,255,255,.45);
+}
+
+/* ================= FOCUS STATES ================= */
+
+.grievance-form input:focus,
+.grievance-form textarea:focus {
+  outline: none;
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(255,31,69,.2);
+}
+
+/* ================= SUBMIT BUTTON ================= */
+
+.grievance-form button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 640px) {
+  .grievance-section {
+    padding: 48px 0;
+  }
+
+  .grievance-form {
+    padding: 24px;
+  }
+}
