@@ -239,6 +239,9 @@ img { max-width: 100%; display: block; }
 .right-stats {
   display: grid;
   gap: 10px;
+  text-align: center;
+  font-size: 22px;
+  font-family:'Times New Roman', Times, serif;   
 }
 
 .rs {
