@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     about: "/about.html",
     careers: "/careers.html",
     events: "/events.html",
-    contact: "/contact.html",
+    "contact & grievance": "/contact.html",
     "customer feedback": "/feedback/customer.html",
     "employee feedback": "/feedback/employee.html",
     grievance: "/feedback/grievance.html",
@@ -172,6 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
+
 /* ================= BRANCH MAP HANDLER ================= */
 
 const branches = {
