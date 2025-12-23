@@ -23,17 +23,15 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ---------------- PAGE ROUTING (RELATIVE FOR VERCEL) ---------------- */
-  const route = {
-    home: "index.html",
-    about: "about.html",
-    careers: "careers.html",
-    events: "events.html",
-    "contact & grievance": "contact.html",
-    "customer feedback": "feedback/customer.html",
-    "employee feedback": "feedback/employee.html",
-    grievance: "feedback/grievance.html",
-    "apply loan": "loan.html",
-    "apply job": "job.html"
+   const route = {
+     home: "/",
+     about: "/about",
+     careers: "/careers",
+     events: "/events",
+     "contact & grievance": "/contact",
+     "apply loan": "/loan",
+     "apply job": "/job"
+   
   };
 
   const go = url => {
