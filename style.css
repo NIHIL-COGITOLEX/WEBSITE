@@ -562,3 +562,39 @@ img { max-width: 100%; display: block; }
 @media (min-width: 1024px) {
   .why-grid { grid-template-columns: repeat(5,1fr); }
 }
+
+/* ================= FOOTER LINK OVERRIDES ================= */
+
+/* All footer links */
+.site-footer a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+/* Hover state */
+.site-footer a:hover {
+  color: var(--white);
+}
+
+/* Phone & email */
+.site-footer .contact-link {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.site-footer .contact-link:hover {
+  color: var(--white);
+}
+
+/* Social icons */
+.site-footer .social {
+  color: var(--muted);
+  font-size: 25px;
+  margin-right: 10px;
+  transition: color .2s var(--ease), transform .2s var(--ease);
+}
+
+.site-footer .social:hover {
+  color: var(--red);
+  transform: translateY(-2px);
+}
