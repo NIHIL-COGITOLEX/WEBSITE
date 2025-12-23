@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: alfa-tza-llp
+    env: static
+    staticPublishPath: .
+    routes:
+      - type: rewrite
+        source: /
+        destination: /index.html
+      - type: rewrite
+        source: /contact
+        destination: /contact.html
+      - type: rewrite
+        source: /loan
+        destination: /loan.html
+      - type: rewrite
+        source: /job
+        destination: /job.html
