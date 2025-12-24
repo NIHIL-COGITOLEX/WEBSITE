@@ -30,8 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
      events: "/events",
      "contact & grievance": "/contact",
      "apply loan": "/loan",
-     "apply job": "/job"
-   
+     "apply job": "/job",
+     "work & testimonials": "testimonials",
+     "lenders & policies": "policies"
   };
 
   const go = url => {
