@@ -5,7 +5,7 @@ services:
     staticPublishPath: .
     routes:
       - type: rewrite
-        source: /
+        source: /home
         destination: /index.html
       - type: rewrite
         source: /contact
