@@ -1,0 +1,319 @@
+/* =========================================================
+   POLICIES PAGE — CARD + TABLE LAYOUT
+   Built for bank cards with structured eligibility tables
+========================================================= */
+
+/* ---------- SECTION SPACING ---------- */
+.section {
+  padding: 56px 0;
+}
+
+.section .hero-lead {
+  max-width: 760px;
+  margin: 0 auto;
+  color: var(--muted);
+}
+
+/* ---------- GRID WRAPPER ---------- */
+.policy-grid {
+  display: grid;
+  gap: 24px;
+}
+
+/* Two columns on desktop */
+@media (min-width: 768px) {
+  .policy-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------- CARD ---------- */
+.service-card {
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,.06),
+    rgba(255,255,255,.02)
+  );
+
+  border-radius: var(--radius-lg);
+  padding: 26px;
+  border: 1px solid rgba(255,255,255,.08);
+
+  box-shadow:
+    0 14px 40px rgba(0,0,0,.4),
+    inset 0 1px 0 rgba(255,255,255,.05);
+
+  transition:
+    transform .35s var(--ease),
+    box-shadow .35s var(--ease),
+    border-color .35s var(--ease);
+
+  animation: fadeUp .6s var(--ease) both;
+}
+
+@media (hover:hover) {
+  .service-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255,31,69,.35);
+    box-shadow:
+      0 24px 55px rgba(0,0,0,.55),
+      inset 0 1px 0 rgba(255,255,255,.08);
+  }
+}
+
+/* ---------- CARD HEADING ---------- */
+.service-card h3 {
+  font-size: 22px;
+  font-weight: 900;
+  margin-bottom: 16px;
+  color: var(--red);
+  letter-spacing: .3px;
+}
+
+@media (min-width: 768px) {
+  .service-card h3 {
+    font-size: 24px;
+  }
+}
+
+/* ---------- TABLE ---------- */
+.service-card table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+/* Table rows */
+.service-card tbody tr {
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+/* Last row cleanup */
+.service-card tbody tr:last-child {
+  border-bottom: none;
+}
+
+/* Cells */
+.service-card td {
+  padding: 10px 6px;
+  vertical-align: middle;
+}
+
+/* Left column (Category) */
+.service-card td:first-child {
+  font-weight: 700;
+  color: var(--white);
+  width: 55%;
+}
+
+/* Right column (Salary / Status) */
+.service-card td:last-child {
+  text-align: right;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* Special emphasis for Not Allowed */
+.service-card td:last-child:contains("Not Allowed") {
+  color: #ff5b5b;
+}
+
+/* ---------- RATE / FOOTER TEXT ---------- */
+.service-card .rate {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--white);
+  margin: 0;
+}
+
+.service-card .rate strong {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+/* ---------- SECTION TITLES ---------- */
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--red);
+  margin-bottom: 32px;
+}
+
+@media (max-width: 767px) {
+  .section-title {
+    font-size: 24px;
+  }
+}
+
+/* ---------- SECTION DIVIDER ---------- */
+.section + .section {
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+
+/* ---------- SMALL DISCLAIMER (OPTIONAL) ---------- */
+.policy-note {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* =========================================================
+   INFOGRAPHICS FOR IMPORTANT INFORMATION
+========================================================= */
+
+/* Wrapper for the info bullets */
+.policy-note-list {
+  display: grid;
+  gap: 20px;
+  padding: 0;
+  list-style: none;
+  margin-top: 20px;
+}
+
+/* Each info card */
+.policy-note-list li {
+  display: flex;
+  align-items: flex-start;
+  background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.policy-note-list li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+}
+
+/* Icon circle on left */
+.policy-note-list li::before {
+  content: "✓"; /* you can change this to any icon or emoji */
+  flex-shrink: 0;
+  font-size: 22px;
+  background: var(--red);
+  color: #fff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+  margin-top: 4px;
+}
+
+/* Text styling */
+.policy-note-list li {
+  color: var(--white);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* =========================
+   QUICK LOAN GUIDE — ALFA TZA LLP STYLE
+   Headings & Content Separated
+=========================== */
+
+/* Wrapper */
+.loan-guide {
+  max-width: var(--container);
+  margin: 40px auto;
+  padding: 20px;
+  animation: fadeUp .8s var(--ease) both;
+}
+
+.loan-guide h1 {
+  text-align: center;
+  font-size: 2em;
+  font-weight: 900;
+  color: var(--red);
+  margin-bottom: 40px;
+  border-bottom: 2px solid var(--red);
+  padding-bottom: 8px;
+}
+
+/* Grid container */
+.guide-container {
+  display: grid;
+  gap: 20px;
+}
+
+/* Responsive columns */
+@media (min-width: 768px) {
+  .guide-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .guide-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Base card style */
+.guide-step {
+  background: var(--surface-2);
+  border-left: 4px solid var(--red);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
+}
+
+@media (hover:hover) {
+  .guide-step:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+    border-color: var(--red-dark);
+  }
+}
+
+/* Heading styling (distinct) */
+.guide-step h2 {
+  font-size: 1.15em;
+  font-weight: 900;
+  color: var(--red);
+  margin: 0;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(255,31,69,.3);
+}
+
+/* Content styling (lighter & separate) */
+.guide-step p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.55;
+  margin: 0;
+  padding-top: 4px;
+}
+
+/* Unique border colors per step */
+.guide-step.step-1 { border-left-color: var(--red); }
+.guide-step.step-2 { border-left-color: #ff4c5b; }
+.guide-step.step-3 { border-left-color: #e53935; }
+.guide-step.step-4 { border-left-color: #c62828; }
+.guide-step.step-5 { border-left-color: #d32f2f; }
+.guide-step.step-6 { border-left-color: #b71c1c; }
+.guide-step.step-7 { border-left-color: #ff1f45; }
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .loan-guide h1 {
+    font-size: 1.8em;
+  }
+  .guide-step h2 {
+    font-size: 1.05em;
+  }
+  .guide-step p {
+    font-size: 12px;
+  }
+}
