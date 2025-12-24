@@ -16,3 +16,15 @@ services:
       - type: rewrite
         source: /job
         destination: /job.html
+      - type: rewrite
+        source: /events
+        destination: /events.html
+      - type: rewrite
+        source: /policies
+        destination: /policies.html
+      - type: rewrite
+        source: /testimonials
+        destination: /testimonials.html
+      - type: rewrite
+        source: /careers
+        destinatiion: /careers.html
