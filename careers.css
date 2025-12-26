@@ -1,0 +1,318 @@
+/* =========================================================
+   CAREERS PAGE — CLEAN CUSTOM CSS
+   Uses global tokens from style.css
+   Header & footer untouched
+========================================================= */
+
+/* ================= SECTION SPACING ================= */
+.section {
+  padding: clamp(30px, 8vw, 40px) 0;
+}
+
+.section-title {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* ================= FADE ANIMATION ================= */
+@keyframes fadeUpSoft {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ===================================================
+   TOP PERFORMERS — CLEAN VICTORY PODIUM
+=================================================== */
+
+.victory-stand {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  align-items: end;
+  animation: fadeUpSoft .8s var(--ease) both;
+}
+
+/* base card */
+.winner {
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,.06),
+    rgba(255,255,255,.015)
+  );
+  border-radius: 20px;
+  padding: 28px 22px;
+  border: 1px solid rgba(255,255,255,.08);
+  text-align: center;
+  position: relative;
+  transition: box-shadow .3s var(--ease), transform .3s var(--ease);
+}
+
+/* hierarchy via HEIGHT (real podium logic) */
+.winner.first {
+  min-height: 420px;
+  box-shadow: 0 26px 60px rgba(255,31,69,.22);
+}
+
+.winner.second {
+  min-height: 360px;
+}
+
+.winner.third {
+  min-height: 320px;
+}
+
+/* hover */
+@media (hover: hover) {
+  .winner:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 48px rgba(0,0,0,.45);
+  }
+}
+
+/* avatar */
+.winner img {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 6px auto 14px;
+  border: 3px solid rgba(255,255,255,.12);
+}
+
+/* name */
+.winner h3 {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+/* description */
+.winner p {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--muted);
+  margin: 10px 0 16px;
+}
+
+/* amount */
+.winner strong {
+  display: block;
+  font-size: 17px;
+  font-weight: 900;
+  color: var(--red);
+}
+
+/* rank bubble */
+.rank {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, var(--red), var(--red-dark));
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  font-size: 14px;
+}
+
+/* mobile podium */
+@media (max-width: 900px) {
+  .victory-stand {
+    grid-template-columns: 1fr;
+  }
+
+  .winner.first,
+  .winner.second,
+  .winner.third {
+    min-height: auto;
+  }
+}
+
+/* ===================================================
+   GENERIC CARD GRID (WHY / VALUES / SKILLS / JOBS)
+=================================================== */
+
+.why-grid {
+  display: grid;
+  gap: 28px;
+}
+
+@media (min-width: 768px) {
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .why-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* card */
+.why-card {
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,.05),
+    rgba(255,255,255,.015)
+  );
+  border-radius: 22px;
+  padding: 28px;
+  border: 1px solid rgba(255,255,255,.08);
+  animation: fadeUpSoft .7s var(--ease) both;
+  transition:
+    transform .35s var(--ease),
+    box-shadow .35s var(--ease),
+    border-color .35s var(--ease);
+}
+
+@media (hover: hover) {
+  .why-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255,31,69,.35);
+    box-shadow: 0 24px 55px rgba(0,0,0,.55);
+  }
+}
+
+/* icon */
+.why-card i {
+  font-size: 26px;
+  color: var(--red);
+  margin-bottom: 14px;
+}
+
+/* title */
+.why-card h3 {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+/* text */
+.why-card p {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+/* CTA button inside cards */
+.why-card .btn {
+  margin-top: 18px;
+  width: 100%;
+}
+
+/* ===================================================
+   SUBHEADINGS
+=================================================== */
+
+.section h3 {
+  font-size: 20px;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+/* ===================================================
+   TESTIMONIALS
+=================================================== */
+
+.testimonials {
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,.03),
+    rgba(255,255,255,.01)
+  );
+}
+
+.testimonials-intro {
+  max-width: 720px;
+  margin: -20px auto 44px;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+/* grid */
+.testimonials-grid {
+  display: grid;
+  gap: 32px;
+}
+
+@media (min-width: 768px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* testimonial card */
+.testimonial-card {
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,.06),
+    rgba(255,255,255,.015)
+  );
+  border-radius: 22px;
+  padding: 28px 24px;
+  border: 1px solid rgba(255,255,255,.08);
+  text-align: center;
+  animation: fadeUpSoft .8s var(--ease) both;
+  transition:
+    transform .35s var(--ease),
+    box-shadow .35s var(--ease),
+    border-color .35s var(--ease);
+}
+
+@media (hover: hover) {
+  .testimonial-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(255,31,69,.35);
+    box-shadow: 0 28px 60px rgba(0,0,0,.55);
+  }
+}
+
+/* avatar */
+.testimonial-card img {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 6px auto 18px;
+  border: 3px solid rgba(255,255,255,.12);
+}
+
+/* text */
+.testimonial-text {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+/* name */
+.testimonial-name {
+  font-weight: 800;
+  font-size: 15px;
+  color: #fff;
+}
+
+/* role */
+.testimonial-role {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 4px;
+}
