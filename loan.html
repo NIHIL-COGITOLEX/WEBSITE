@@ -51,6 +51,8 @@
       </div>
     </header>
 
+    <h1>Apply Loan</h1>
+
 <main class="container" style="padding:60px 0;">
   <h2 style="margin-bottom:20px;">Loan Application Form</h2>
 
@@ -66,13 +68,25 @@
 
     <!-- Right: Loan Form -->
     <div class="form-card">
-      <form class="apply-form">
-        <label>Full Name<input type="text" required></label>
-        <label>Phone<input type="tel" required pattern="[0-9]{10}"></label>
-        <label>Email<input type="email" required></label>
+      <form class="apply-form" id="loanForm">
+        <label>
+          Full Name
+          <input type="text" id="fullName" required>
+        </label>
+        
+        <label>
+          Phone
+          <input type="tel" id="phone" required pattern="[0-9]{10}">
+        </label>
+        
+        <label>
+          Email
+          <input type="email" id="email" required>
+        </label>
+        
         <label>
           Loan Amount
-          <select required>
+          <select id="loanAmount" required>
             <option value="" disabled selected>Select loan range</option>
             <option value="50k-1l">₹50,000 – ₹1,00,000</option>
             <option value="1l-5l">₹1,00,000 – ₹5,00,000</option>
@@ -84,30 +98,38 @@
         
         <label>
           Loan Tenure
-          <select required>
+          <select id="loanTenure" required>
             <option value="" disabled selected>Select tenure</option>
-            <option value="12">12 months (1 year)</option>
-            <option value="24">24 months (2 years)</option>
-            <option value="36">36 months (3 years)</option>
-            <option value="48">48 months (4 years)</option>
-            <option value="60">60 months (5 years)</option>
-            <option value="72">72 months (6 years)</option>
-            <option value="84">84 months (7 years)</option>
+            <option value="12">12 months</option>
+            <option value="24">24 months</option>
+            <option value="36">36 months</option>
+            <option value="48">48 months</option>
+            <option value="60">60 months</option>
+            <option value="72">72 months</option>
+            <option value="84">84 months</option>
           </select>
         </label>
-      
-      <label>
-        City
-        <input type="text" required>
-      </label>
-      
-        <label>City Pincode<input type="text" required pattern="[0-9]{6}" maxlength="6" inputmode="numeric">
+        
+        <label>
+          City
+          <input type="text" id="city" required>
+        </label>
+        
+        <label>
+          Pincode
+          <input type="text" id="pincode" required maxlength="6">
+        </label>
+        
         <button type="submit" class="btn-submit">Submit</button>
+        
       </form>
     </div>
 
   </div>
-
+  <div id="loanSuccessMessage" style="display:none; color:green; margin-top:10px;">
+    Loan application submitted successfully!
+  </div>
+  
 </main>
 
     <!-- FOOTER -->
