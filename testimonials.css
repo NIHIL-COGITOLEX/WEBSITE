@@ -1,0 +1,277 @@
+/* =========================================================
+   ALFA EXPLAINER SECTIONS — ADDON CSS
+   Works with existing style.css
+========================================================= */
+
+/* ================= A] INFOGRAPHIC CARDS ================= */
+
+.alfa-infographic-cards {
+  display: grid;
+  gap: 20px;
+}
+
+.info-card {
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,.06),
+    rgba(255,255,255,.02)
+  );
+  border-radius: var(--radius-lg);
+  padding: 26px;
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.3),
+    inset 0 1px 0 rgba(255,255,255,.05);
+  transition:
+    transform .35s var(--ease),
+    box-shadow .35s var(--ease),
+    border-color .35s var(--ease);
+}
+
+.info-card h3 {
+  margin-top: 0;
+  color: var(--red);
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.info-card p {
+  font-size: 14.5px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+@media (hover:hover) {
+  .info-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255,31,69,.35);
+    box-shadow:
+      0 18px 45px rgba(0,0,0,.45),
+      inset 0 1px 0 rgba(255,255,255,.08);
+  }
+}
+
+@media (min-width: 768px) {
+  .alfa-infographic-cards {
+    grid-template-columns: repeat(3,1fr);
+  }
+}
+
+/* ================= B] PROCESS FLOW — ROADMAP STYLE ================= */
+
+.process-flow {
+  position: relative;
+  max-width: 820px;
+  margin: 0 auto;
+  padding-left: 42px;
+  display: grid;
+  gap: 34px;
+}
+
+/* vertical line */
+.process-flow::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    rgba(255,31,69,.6),
+    rgba(255,31,69,.15),
+    rgba(255,31,69,.6)
+  );
+}
+
+/* step */
+.process-step {
+  position: relative;
+  padding-left: 8px;
+}
+
+/* dot */
+.process-step::before {
+  content: "";
+  position: absolute;
+  left: -34px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--red);
+  box-shadow:
+    0 0 0 6px rgba(255,31,69,.15),
+    0 0 18px rgba(255,31,69,.6);
+}
+
+/* icon inline, subtle */
+.step-icon {
+  font-size: 18px;
+  margin-bottom: 6px;
+  display: inline-block;
+  opacity: .85;
+}
+
+/* text */
+.process-step p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--muted);
+}
+
+/* REMOVE arrows completely */
+.process-arrow {
+  display: none;
+}
+
+/* hover polish */
+@media (hover:hover) {
+  .process-step:hover::before {
+    box-shadow:
+      0 0 0 8px rgba(255,31,69,.2),
+      0 0 26px rgba(255,31,69,.85);
+  }
+}
+
+/* ================= C] STORY CARD — DIRECTIONAL HOVER ================= */
+
+.story-card {
+  background:
+    radial-gradient(circle at top, rgba(255,31,69,.08), transparent 60%),
+    var(--surface-1);
+  padding: 30px;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255,255,255,.08);
+
+  box-shadow: 0 12px 35px rgba(0,0,0,.35);
+  transform:
+    perspective(900px)
+    translate3d(0,0,0)
+    rotateX(0)
+    rotateY(0);
+
+  transition:
+    transform .35s cubic-bezier(.2,.8,.2,1),
+    box-shadow .35s cubic-bezier(.2,.8,.2,1);
+  will-change: transform;
+}
+
+.story-card p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+@media (hover:hover) {
+  .story-card.is-hovered {
+    transform:
+      perspective(900px)
+      translate3d(var(--tx), var(--ty), -10px)
+      rotateX(var(--rx))
+      rotateY(var(--ry));
+
+    box-shadow:
+      0 30px 70px rgba(0,0,0,.6),
+      0 0 45px rgba(255,31,69,.25);
+  }
+}
+
+
+/* ================= D] TESTIMONIAL STRIP (SLOW + RED GLOW) ================= */
+
+.testimonial-wrap {
+  overflow: hidden;
+  padding: 18px 0;
+  position: relative;
+}
+
+/* glow from behind */
+.testimonial-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at center,
+      rgba(255,31,69,.18),
+      transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.testimonial-track {
+  display: flex;
+  gap: 26px;
+  width: max-content;
+  animation: testimonialScroll 70s linear infinite;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-wrap:hover .testimonial-track {
+  animation-play-state: paused;
+}
+
+.testimonial-card {
+  background: var(--surface-2);
+  padding: 22px 26px;
+  border-radius: 999px;
+  min-width: 320px;
+  max-width: 360px;
+  border: 1px solid rgba(255,31,69,.25);
+  box-shadow:
+    0 0 20px rgba(255,31,69,.25),
+    inset 0 1px 0 rgba(255,255,255,.06);
+}
+
+.testimonial-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--white);
+  margin: 0 0 8px;
+}
+
+.testimonial-card .author {
+  font-size: 13px;
+  color: var(--red);
+  font-weight: 700;
+  letter-spacing: .4px;
+}
+
+/* same logic as bank strip */
+@keyframes testimonialScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (hover:none) {
+  .testimonial-track {
+    animation-play-state: running !important;
+  }
+}
+
+.testimonial-card {
+  position: relative;
+  padding-left: 56px; /* space for icon */
+}
+
+/* red person infograph */
+.testimonial-card::before {
+  content: "";
+  position: absolute;
+  align-content: center;
+  top: 1%;
+  width: 35px;
+  height: 35px;
+  transform: translateY(-50%);
+
+  background:
+    radial-gradient(circle at 50% 30%, #ff1f45 35%, transparent 36%),
+    linear-gradient(#ff1f45 0 0) bottom/70% 45% no-repeat;
+
+  border-radius: 50%;
+  box-shadow:
+    0 0 20px rgba(255,31,69,.6);
+}
