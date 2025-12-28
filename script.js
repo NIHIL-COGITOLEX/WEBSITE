@@ -31,8 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
      "contact & grievance": "/contact",
      "apply loan": "/loan",
      "apply job": "/job",
-     "work & testimonials": "testimonials",
-     "lenders & policies": "policies"
+     "work & testimonials": "/testimonials",
+     "lenders & policies": "/policies"
   };
 
   const go = url => {
@@ -171,23 +171,40 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { passive: true });
   }
 
-  /* ---------------- FLOAT CARD TILT ---------------- */
+  /* ---------------- STORY CARD DIRECTIONAL HOVER ---------------- */
   if (window.matchMedia("(hover: hover)").matches) {
-    document.querySelectorAll("[data-tilt]").forEach(card => {
+    document.querySelectorAll(".story-card").forEach(card => {
+
       card.addEventListener("mousemove", e => {
         const rect = card.getBoundingClientRect();
-        const rx = ((e.clientY - rect.top) / rect.height - 0.5) * -8;
-        const ry = ((e.clientX - rect.left) / rect.width - 0.5) * 8;
-        card.style.transform =
-          `perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const cx = rect.width / 2;
+        const cy = rect.height / 2;
+
+        const dx = (x - cx) / cx;
+        const dy = (y - cy) / cy;
+
+        card.style.setProperty("--rx", `${dy * -8}deg`);
+        card.style.setProperty("--ry", `${dx * 8}deg`);
+        card.style.setProperty("--tx", `${dx * 6}px`);
+        card.style.setProperty("--ty", `${dy * 6}px`);
+
+        card.classList.add("is-hovered");
       });
 
       card.addEventListener("mouseleave", () => {
-        card.style.transform = "none";
+        card.classList.remove("is-hovered");
+        card.style.setProperty("--rx", "0deg");
+        card.style.setProperty("--ry", "0deg");
+        card.style.setProperty("--tx", "0px");
+        card.style.setProperty("--ty", "0px");
       });
+
     });
   }
-
 });
 
 /* ================= BRANCH MAP ================= */
@@ -224,4 +241,140 @@ function openMap() {
   if (branch) {
     window.open(branch.link, "_blank");
   }
+}
+
+// ================== CONFIG ==================
+const SUPABASE_URL = "https://ttnlhduxxztpkthodctn.supabase.co";
+const SUPABASE_KEY = "sb_publishable_nn0MYL0NpoTuA706h88L7g_BlEU1SDE";
+
+
+// ================== JOB FORM SUBMIT ==================
+const jobForm = document.getElementById("jobForm");
+const jobSuccessMsg = document.getElementById("jobSuccessMessage");
+
+if (jobForm) {
+  jobForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const payload = {
+      full_name: document.getElementById("fullName").value,
+      phone: document.getElementById("phone").value,
+      email: document.getElementById("email").value,
+      position: document.getElementById("position").value
+    };
+
+    try {
+      const res = await fetch(
+        `${SUPABASE_URL}/rest/v1/job_applications`,
+        {
+          method: "POST",
+          headers: {
+            "apikey": SUPABASE_KEY,
+            "Authorization": `Bearer ${SUPABASE_KEY}`,
+            "Content-Type": "application/json",
+            "Prefer": "return=minimal"
+          },
+          body: JSON.stringify(payload)
+        }
+      );
+
+      if (!res.ok) throw new Error(await res.text());
+
+      jobForm.reset();
+      jobSuccessMsg.style.display = "block";
+
+    } catch (err) {
+      console.error(err);
+      alert("Submission failed. Check console.");
+    }
+  });
+}
+
+
+// ================== GRIEVANCE FORM ==================
+const grievanceForm = document.getElementById("grievanceForm");
+const grievanceSuccessMsg = document.getElementById("grievanceSuccessMessage");
+
+if (grievanceForm) {
+  grievanceForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const payload = {
+      full_name: document.getElementById("fullName").value,
+      phone: document.getElementById("phone").value,
+      email: document.getElementById("email").value,
+      message: document.getElementById("message").value
+    };
+
+    try {
+      const res = await fetch(
+        `${SUPABASE_URL}/rest/v1/grievances`,
+        {
+          method: "POST",
+          headers: {
+            "apikey": SUPABASE_KEY,
+            "Authorization": `Bearer ${SUPABASE_KEY}`,
+            "Content-Type": "application/json",
+            "Prefer": "return=minimal"
+          },
+          body: JSON.stringify(payload)
+        }
+      );
+
+      if (!res.ok) throw new Error(await res.text());
+
+      grievanceForm.reset();
+      grievanceSuccessMsg.style.display = "block";
+
+    } catch (err) {
+      console.error(err);
+      alert("Failed to submit grievance.");
+    }
+  });
+}
+
+
+// ================== LOAN APPLICATION ==================
+const loanForm = document.getElementById("loanForm");
+const successMsg = document.getElementById("loanSuccessMessage");
+
+if (loanForm) {
+  loanForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const payload = {
+      full_name: document.getElementById("fullName").value,
+      phone: document.getElementById("phone").value,
+      email: document.getElementById("email").value,
+      loan_amount: document.getElementById("loanAmount").value,
+      loan_tenure: document.getElementById("loanTenure").value,
+      city: document.getElementById("city").value,
+      pincode: document.getElementById("pincode").value
+    };
+
+    try {
+      const res = await fetch(
+        `${SUPABASE_URL}/rest/v1/loan_applications`,
+        {
+          method: "POST",
+          headers: {
+            "apikey": SUPABASE_KEY,
+            "Authorization": `Bearer ${SUPABASE_KEY}`,
+            "Content-Type": "application/json",
+            "Prefer": "return=minimal"
+          },
+          body: JSON.stringify(payload)
+        }
+      );
+
+      if (!res.ok) throw new Error(await res.text());
+
+      loanForm.reset();
+      successMsg.style.display = "block";
+
+    } catch (err) {
+      console.error(err);
+      alert("Something went wrong. Try again.");
+    }
+  });
 }
