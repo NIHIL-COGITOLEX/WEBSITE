@@ -18,7 +18,7 @@ export const supabaseClient = createClient(
 
 /* ---------------- ROUTES ---------------- */
 export const ROUTES = {
-  home: "/home",
+  home: "/",
   about: "/about",
   careers: "/careers",
   events: "/events",
