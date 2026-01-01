@@ -1,0 +1,202 @@
+  <!doctype html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Alfa Tza LLP — Personal Loans Made Simple</title>
+    <meta name="description" content="Alfa Tza LLP — Personal loans for customers and DSA partners. Fast approvals, trusted lenders, robust DSA support." />
+
+    <!-- Fonts & icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="events.css">
+    
+  </head>
+  <body>
+    <header class="top-header" role="banner">
+      <div class="container header-inner">
+        <div class="brand-left" role="presentation">
+      <a href="home">
+        <img
+          id="brandLogo"
+          class="brand-logo"
+          src="https://github.com/NIHIL-COGITOLEX/website/blob/main/Untitled_design-removebg-preview.png?raw=true"
+          alt="Alfa Tza LLP logo"
+        >
+      </a>
+        </div>
+
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="nav-right" id="navMenu" aria-label="Primary navigation">
+          <button class="btn ghost" id="contactBtn">Contact</button>
+          <button class="btn accent" id="applyLoanBtn">Apply Loan</button>
+          <button class="btn outline" id="applyJobBtn">Apply Job</button>
+        </nav>
+      </div>
+    </header>
+
+
+    <!-- MAIN -->
+    <main>
+
+      <!-- PAGE INTRO -->
+      <section class="section">
+        <div class="container">
+          <h1 class="section-title">Our Events</h1>
+          <p class="hero-lead">
+            Celebrations, achievements, and moments at Alfa Tza LLP.
+          </p>
+        </div>
+      </section>
+
+      <!-- EVENTS -->
+      <section class="section">
+        <div class="container">
+
+          <!-- August -->
+          <div class="event-block">
+            <h2 class="event-title">August Performance Gift</h2>
+
+            <!-- IMPORTANT: ID is clean, NOT the folder name -->
+            <div
+              class="photos event-gallery"
+              data-folder="happiness-events"
+            ></div>
+          </div>
+
+          <!-- JULY COMPETITION -->
+          <div class="event-block">
+            <h2 class="event-title">July Competition Winner Celebration</h2>
+
+            <!-- IMPORTANT: ID is clean, NOT the folder name -->
+            <div
+              class="photos event-gallery"
+              data-folder="july-competition"
+            ></div>
+          </div>
+
+          <!-- Dining -->
+          <div class="event-block">
+            <h2 class="event-title">Dining In Office</h2>
+
+            <!-- IMPORTANT: ID is clean, NOT the folder name -->
+            <div
+              class="photos event-gallery"
+              data-folder="dining-office"
+            ></div>
+          </div>
+
+          <!-- Group -->
+          <div class="event-block">
+            <h2 class="event-title">Group Gatherings</h2>
+
+            <!-- IMPORTANT: ID is clean, NOT the folder name -->
+            <div
+              class="photos event-gallery"
+              data-folder="group-gatherings"
+            ></div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-top">
+      <div class="footer-left">
+        <img src="https://github.com/NIHIL-COGITOLEX/website/blob/main/Untitled_design-removebg-preview.png?raw=true" alt="Alfa logo" class="footer-logo">
+        <address class="footer-address">
+          Office 304, Reliable Pride, Sector 19, Vashi, Navi Mumbai 400703<br>
+          <a href="tel:+919000000000" class="contact-link">+91 86573 38722</a> • <a href="mailto:arsh9321021942@gmail.com"  class="contact-link">arsh9321021942@gmail.com</a>
+        </address>
+        <div class="socials">
+          <a class="social"
+            href="https://twitter.com/yourhandle"
+            target="_blank"
+            rel="noopener"
+            aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+        
+          <a class="social"
+            href="https://instagram.com/yourhandle"
+            target="_blank"
+            rel="noopener"
+            aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+        
+          <a class="social"
+            href="https://www.youtube.com/@dhruvrathee"
+            target="_blank"
+            rel="noopener"
+            aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+        
+          <a class="social"
+            href="https://wa.me/919000000000"
+            target="_blank"
+            rel="noopener"
+            aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+        
+      </div>
+
+      <div class="footer-right">
+        <div class="panel">
+          <h4>Company</h4>
+          <ul class="links"><li>Home</li><li>About</li><li>Careers</li><li>Events</li></ul>
+        </div>
+
+        <div class="panel">
+          <h4>Feedback</h4>
+          <ul class="links"><li>Lenders & Policies</li><li>Work & Testimonials</li><li>Contact & Grievance</li></ul>
+        </div>
+
+        <div class="panel">
+          <h4>Apply</h4>
+          <ul class="links"><li class="apply-loan">Apply Loan</li><li class="apply-job">Apply Job</li></ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <small>© <span id="year"></span> Alfa Tza LLP — All rights reserved</small>
+    </div>
+  </footer>
+
+  <!-- Fullscreen Image Popup -->
+<div class="img-popup-overlay" id="popupOverlay">
+  <div class="img-popup-content">
+  <button class="img-popup-close" id="popupClose">&times;</button>
+
+  <button class="nav-arrow left" id="prevImg">&#10094;</button>
+
+  <img id="popupImage" src="" alt="Expanded event photo">
+
+  <button class="nav-arrow right" id="nextImg">&#10095;</button>
+  </div>
+</div>
+
+
+  </main>
+
+  <script type="module" src="/js/main.js"></script>
+
+  <!-- End body -->
+  </body>
+  </html>
