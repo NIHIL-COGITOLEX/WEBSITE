@@ -5,26 +5,37 @@ services:
     staticPublishPath: .
     routes:
       - type: rewrite
+        source: /
+        destination: /index.html
+
+      - type: rewrite
         source: /home
         destination: /index.html
+
       - type: rewrite
         source: /contact
         destination: /contact.html
+
       - type: rewrite
         source: /loan
         destination: /loan.html
+
       - type: rewrite
         source: /job
         destination: /job.html
+
       - type: rewrite
         source: /events
         destination: /events.html
+
       - type: rewrite
         source: /policies
         destination: /policies.html
+
       - type: rewrite
         source: /testimonials
         destination: /testimonials.html
+
       - type: rewrite
         source: /careers
-        destinatiion: /careers.html
+        destination: /careers.html
