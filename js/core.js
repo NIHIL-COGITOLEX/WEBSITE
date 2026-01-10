@@ -6,6 +6,25 @@ import { ROUTES } from "./config.js";
 
 export function initCore() {
 
+  // Smooth self-draw SVG text
+  window.addEventListener("load", () => {
+    const lines = document.querySelectorAll("svg .stroke-line");
+
+    lines.forEach((text, i) => {
+      const length = text.getComputedTextLength();
+      text.style.strokeDasharray = length;
+      text.style.strokeDashoffset = length;
+      text.style.stroke = "#ffffff"; // outline color
+      text.style.fill = "none";      // hide fill
+
+      // stagger drawing using setTimeout
+      setTimeout(() => {
+        text.style.transition = "stroke-dashoffset 1.2s ease-out";
+        text.style.strokeDashoffset = 0; // draw the line
+      }, i * 500); // 0ms, 500ms, 1000ms for each line
+    });
+  });
+
   /* ================= FOOTER YEAR ================= */
   const year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
@@ -92,20 +111,19 @@ export function initCore() {
   const counters = document.querySelectorAll("[data-target]");
 
   const animateCount = (el, target) => {
-    let current = 0;
-    const step = Math.max(1, Math.floor(target / 80));
-
-    const tick = () => {
-      current += step;
-      if (current >= target) {
-        el.textContent = target;
-      } else {
-        el.textContent = current;
-        requestAnimationFrame(tick);
-      }
+    const duration = 1200;
+    const startTime = performance.now();
+  
+    const tick = now => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easeOut = 1 - Math.pow(1 - progress, 3); // smooth cubic easing
+      el.textContent = Math.floor(easeOut * target);
+      if (progress < 1) requestAnimationFrame(tick);
     };
-    tick();
+    requestAnimationFrame(tick);
   };
+  
 
   const counterObserver = new IntersectionObserver(
     entries => {
@@ -134,29 +152,62 @@ export function initCore() {
     counterObserver.observe(c)
   );
 
-  /* ================= SCROLL REVEAL ================= */
-  const revealEls = document.querySelectorAll(
-    ".why-card, .metric, .service-card"
-  );
+  /* ================= SCROLL REVEAL (NON-ABOUT PAGES ONLY) ================= */
 
-  const revealObserver = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = "1";
-          entry.target.style.transform = "none";
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.2 }
-  );
+  if (!document.querySelector(".about-page")) {
 
-  revealEls.forEach(el => {
-    el.style.opacity = "0";
-    el.style.transform = "translateY(30px)";
-    revealObserver.observe(el);
-  });
+    const revealEls = document.querySelectorAll(
+      ".why-card, .service-card"
+    );
+
+    const revealObserver = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "none";
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    revealEls.forEach(el => {
+      el.style.opacity = "0";
+      el.style.transform = "translateY(30px)";
+      revealObserver.observe(el);
+    });
+
+  }
+
+  /* ================= ABOUT PAGE SCROLL ANIMATIONS ================= */
+
+  if (document.querySelector(".about-page")) {
+
+    const aboutRevealEls = document.querySelectorAll(
+      ".about-hero, .process-step, .founder-grid, .triple-grid > div, .timeline-grid .metric"
+    );
+
+    aboutRevealEls.forEach(el => el.classList.add("reveal"));
+
+    const aboutObserver = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            aboutObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    aboutRevealEls.forEach(el =>
+      aboutObserver.observe(el)
+    );
+
+  }
 
   /* ================= BANK TICKER ================= */
   const bankTrack = document.getElementById("banksTrack");
@@ -210,5 +261,29 @@ export function initCore() {
         });
 
       });
+
+    // Hero Cards Tilt
+    document.querySelectorAll(".float-card").forEach(card => {
+      card.addEventListener("mousemove", e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const dx = (x - rect.width / 2) / (rect.width / 2);
+        const dy = (y - rect.height / 2) / (rect.height / 2);
+
+        card.style.transform = `
+          rotateX(${-dy * 10}deg)
+          rotateY(${dx * 10}deg)
+          translateY(-5px)
+        `;
+        card.style.transition = "transform 0.2s ease";
+      });
+      card.addEventListener("mouseleave", () => {
+        card.style.transform = "rotateX(0deg) rotateY(0deg) translateY(0)";
+      });
+    });
+
   }
 }
+
+
