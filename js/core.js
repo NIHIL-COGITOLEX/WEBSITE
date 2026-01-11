@@ -284,6 +284,40 @@ export function initCore() {
     });
 
   }
-}
 
+  /* ================= BRANCH MAP ================= */
 
+  const branches = {
+    vashi: {
+      embed: "https://www.google.com/maps?q=Alfa+TZA+LLP+Vashi+Plaza&output=embed",
+      link: "https://www.google.com/maps?q=Alfa+TZA+LLP+Vashi+Plaza"
+    },
+    thane: {
+      embed: "https://www.google.com/maps?q=The+Corporate+Park+Vashi&output=embed",
+      link: "https://www.google.com/maps?q=The+Corporate+Park+Vashi"
+    }
+  };
+
+  let activeBranch = "vashi";
+
+  window.switchBranch = function (branch) {
+    if (!branches[branch]) return;
+    activeBranch = branch;
+
+    const map = document.getElementById("branchMap");
+    if (map) map.src = branches[branch].embed;
+
+    document.querySelectorAll(".branch-card").forEach(card => {
+      card.classList.toggle(
+        "active",
+        card.dataset.branch === branch
+      );
+    });
+  };
+
+  window.openMap = function () {
+    const branch = branches[activeBranch];
+    if (branch) window.open(branch.link, "_blank");
+  };
+
+} // ← closes initCore ONLY
