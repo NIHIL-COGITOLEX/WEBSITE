@@ -53,29 +53,43 @@
     <!-- Left: Company Info -->
     <div class="info-card">
       <h3>Company Info</h3>
-      <p><strong>Address:</strong> 123 Alfa Street, Cityville</p>
+      <p><strong>Address:</strong> 3rd Floor, Vashi plaza, Alfa TZA LLP, D wing-512, Plot No. 80/81, Sector 17, Vashi, Navi Mumbai, Maharashtra 400703</p>
       <p><strong>Phone:</strong> +1 234 567 890</p>
       <p><strong>Email:</strong> contact@alfatza.com</p>
     </div>
 
     <!-- Right: Job Form -->
     <div class="form-card">
-      <form class="apply-form">
-        <label>Full Name<input type="text" required></label>
-        <label>Phone<input type="tel" required pattern="[0-9]{10}"></label>
-        <label>Email<input type="email" required></label>
+      <form class="apply-form" id="jobForm">
+        <label>Full Name
+          <input id="fullName" type="text" required>
+        </label>
+      
+        <label>Phone
+          <input id="phone" type="tel" required pattern="[0-9]{10}">
+        </label>
+      
+        <label>Email
+          <input id="email" type="email" required>
+        </label>
+      
         <label>Position Applying For
-          <select required>
+          <select id="position" required>
             <option>Sales Executive</option>
             <option>Telecaller</option>
             <option>Team Leader</option>
-            <option>Hr</option>
+            <option>Marketing</option>
           </select>
         </label>
+      
         <button type="submit" class="btn-submit">Submit</button>
-      </form>
+      </form>      
     </div>
 
+  </div>
+  
+  <div id="jobSuccessMessage" style="display:none; color:green; margin-top:10px;">
+    Job application submitted successfully!
   </div>
 
 </main>
@@ -85,7 +99,7 @@
         <div class="footer-left">
           <img src="https://github.com/NIHIL-COGITOLEX/website/blob/main/Untitled_design-removebg-preview.png?raw=true" alt="Alfa logo" class="footer-logo">
           <address class="footer-address">
-            Office 304, Reliable Pride, Sector 19, Vashi, Navi Mumbai 400703<br>
+            3rd Floor, Vashi plaza, Alfa TZA LLP, D wing-512, Plot No. 80/81, Sector 17, Vashi, Navi Mumbai, Maharashtra 400703<br>
             <a href="tel:+919000000000" class="contact-link">+91 86573 38722</a> • <a href="mailto:arsh9321021942@gmail.com"  class="contact-link">arsh9321021942@gmail.com</a>
           </address>
           <div class="socials">
