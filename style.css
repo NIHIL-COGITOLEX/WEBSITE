@@ -599,3 +599,8 @@ img { max-width: 100%; display: block; }
   color: var(--red);
   transform: translateY(-2px);
 }
+
+h2 {
+  color:crimson;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
